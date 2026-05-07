@@ -1,0 +1,187 @@
+body {
+    font-family: var(--fuente-principal);
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+}
+
+header {
+    background: linear-gradient(
+        90deg,
+        var(--color-header1),
+        var(--color-header2)
+    );
+
+    text-align: center;
+    padding: var(--padding-general);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: var(--color-nav);
+    padding: 10px;
+}
+
+nav a {
+    color: var(--color-texto);
+    margin: 0 15px;
+    text-decoration: none;
+    transition: var(--transicion);
+}
+
+nav a:hover {
+    color: var(--color-secundario);
+}
+
+.productos {
+    text-align: center;
+    padding: 30px;
+}
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--color-card);
+    padding: 15px;
+    border-radius: var(--radio-card);
+    transition: transform var(--transicion),
+                box-shadow var(--transicion);
+
+    animation: aparecer 0.8s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--radio-input);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: var(--sombra-card);
+}
+
+form {
+    background: var(--color-card);
+    padding: var(--padding-form);
+    margin: 30px auto;
+    width: 350px;
+    border-radius: var(--radio-card);
+    box-shadow: var(--sombra-form);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--color-label);
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: var(--radio-input);
+    border: none;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    box-shadow: 0 0 5px var(--color-secundario);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: var(--color-footer);
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radio-boton);
+
+    background: linear-gradient(
+        135deg,
+        var(--color-header2),
+        var(--color-secundario)
+    );
+
+    color: var(--color-texto);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: all var(--transicion);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-boton);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.header {
+
+    background:
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475")
+    no-repeat center/cover;
+
+    height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.overlay {
+    background: var(--color-overlay);
+    padding: 20px;
+    border-radius: var(--radio-input);
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.header p {
+    font-size: 18px;
+    color: var(--color-label);
+}
+
+h2 {
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
